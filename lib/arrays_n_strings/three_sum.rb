@@ -8,8 +8,8 @@ require 'set'
 # Notice that the solution set must not contain duplicate triplets.
 module ThreeSum
   # Inspired by https://leetcode.com/explore/interview/card/top-interview-questions-medium/103/array-and-strings/776/discuss/725950/Python-5-Easy-Steps-Beats-97.4-Annotated
-  # @param {Integer[]} nums
-  # @return {Integer[][]}
+  # @param nums [Array<Integer>]
+  # @return [Array<Array<Integer>>]
   def self.three_sum(nums = [])
     res = Set.new
 

@@ -9,9 +9,9 @@
 #
 # We can use `String#bytes` as we are not handling any UTF-8 stuff.
 module GroupAnagrams
-  # @param {String[]} strs
-  # @return {String[][]}
-  def self.group_anagrams(strs)
+  # @param strs [Array<String>]
+  # @return [Array<Array<String>>]
+  def self.group_anagrams(strs = [1, 2, 3])
     strs.group_by { _1.bytes.sort }.values
   end
 end

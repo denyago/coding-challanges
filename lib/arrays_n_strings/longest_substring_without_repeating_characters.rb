@@ -6,12 +6,17 @@
 #   - `s` consists of English letters, digits, symbols and spaces.
 module LongestSubstringWithoutRepeatingCharacters
   # rubocop:disable Naming/MethodParameterName
-  # @param {String} s
-  # @return {Integer}
+  # @param s [String]
+  # @param debug [Boolean]
+  # @return [Integer] if `debug` is false
+  # @return [Array<Integer, String>] if `debug` is true
   def self.length_of_longest_substring(s = '', debug: false)
     longest = {}
 
-    last_result = s.chars.each_with_index.inject({}) do |acc, (c, i)|
+    last_result = s
+                  .each_char
+                  .with_index
+                  .inject({}) do |acc, (c, i)|
       if acc.values.include?(c)
         longest = acc if longest.size < acc.size
         previous_character_index = acc.select { |_, v| v == c }.keys.max
@@ -31,6 +36,8 @@ module LongestSubstringWithoutRepeatingCharacters
   end
 
   # Best time solution - https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/853529665/
+  # @param s [String]
+  # @return [Integer]
   def self.best_length_of_longest_substring(s)
     return 0 if s.length.zero?
     return 1 if s.length == 1

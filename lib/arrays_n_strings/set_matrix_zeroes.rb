@@ -27,8 +27,8 @@ module SetMatrixZeroes
   # rubocop:disable Naming/AccessorMethodName
   # TODO: My `dotfiles` - ALE does not see the local workspace Rubocop config.
   # Therefore I see inconsistent results.
-  # @param {Integer[][]} matrix
-  # @return {Void} Do not return anything, modify matrix in-place instead.
+  # @param matrix [Array<Array<Integer>>]
+  # @return [void] Do not return anything, modify matrix in-place instead.
   def self.set_zeroes(matrix)
     i_max = matrix.size - 1
     j_max = matrix.first.size - 1
