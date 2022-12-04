@@ -11,6 +11,8 @@ class ListNode
     end
   end
 
+  EMPTY = nil
+
   # API compatibility for LeetCode
   # ListNode class.
   def next
