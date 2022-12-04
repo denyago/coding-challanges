@@ -41,4 +41,18 @@ class ListNode
 
     val == other.val && next_node == other.next_node
   end
+
+  def +(other)
+    tail = self
+    tail = tail.next_node until tail.next_node.nil?
+    tail.next_node = other
+    self
+  end
+
+  def [](position)
+    return self if position.zero?
+    return EMPTY if next_node.nil?
+
+    next_node[position - 1]
+  end
 end

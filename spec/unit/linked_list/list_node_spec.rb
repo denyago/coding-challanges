@@ -21,6 +21,22 @@ RSpec.describe ListNode do
     end
   end
 
+  describe '#+' do
+    it 'adds two lists' do
+      expect(described_class[1, 2, 3] + described_class[4, 5, 6]).to eq(described_class[1, 2, 3, 4, 5, 6])
+    end
+  end
+
+  describe '#[]' do
+    it 'returns a ListNode at the given positon' do
+      expect(described_class[1, 2, 3, 4][2]).to eq(described_class[3, 4])
+    end
+
+    it 'returns a ListNode::EMPTY ia the given position when it is out of bounds' do
+      expect(described_class[1, 2][2]).to eq(ListNode::EMPTY)
+    end
+  end
+
   describe '#==' do
     let(:the_list) { described_class[1, 2] }
 
