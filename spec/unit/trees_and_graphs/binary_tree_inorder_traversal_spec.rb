@@ -9,7 +9,8 @@ RSpec.describe BinaryTreeInorderTraversal do
   cases = {
     TN[1, nil, TN[2, TN[3]]] => [1, 3, 2],
     TN[] => [],
-    TN[0] => [0]
+    TN[0] => [0],
+    TN[3, TN[9, TN[41], TN[42]], TN[20, TN[15], TN[7]]] => [41, 9, 42, 3, 15, 20, 7]
   }
 
   cases.each do |input, expected|

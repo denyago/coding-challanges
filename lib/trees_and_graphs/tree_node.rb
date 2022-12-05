@@ -43,6 +43,21 @@ class TreeNode
       right&.to_dot(root: false).to_s +
       (root ? "\n}" : '')
   end
+
+  def to_s
+    "#{["TN[#{val}", left.to_s, right.to_s].reject(&:empty?).join(', ')}]"
+  end
+
+  def ==(other)
+    return false \
+      unless other.respond_to?(:val) && \
+             other.respond_to?(:left) && \
+             other.respond_to?(:right)
+
+    val == other&.val &&
+      left == other&.left &&
+      right == other&.right
+  end
 end
 
 # Alias for TreeNode
